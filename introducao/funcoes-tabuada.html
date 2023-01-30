@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula sobre Funções</title>
+</head>
+<body>
+    <H1 id="home">Insira um valor numérico no campo abaixo</H1>
+    <p><input type="text" id="campo"></p>
+    <H1>Agora clique no botão e mostre a tabuada deste número de 1 a 1000</H1>
+    <button onclick="exibirTabuada()">Mostrar Tabuada</button>
+    <button onclick="esconderTabuada()">Esconder Tabuada</button>
+    <p id="msg">Aguardando para exibir tabuada...</p>
+    <p><a href="#home">Voltar</a></p>
+</body>
+<script>
+    const valorCampo = document.getElementById("campo")
+    const tabuada = document.getElementById("msg")
+    
+    function exibirTabuada(){
+        let valorTabuada = ""
+        let idx = 1
+        while(idx <=1000){
+            valorTabuada += `${parseInt(valorCampo.value)} x ${idx} = ${parseInt(valorCampo.value) * idx}<br>`
+            idx++
+        }
+
+        tabuada.innerHTML = "Agora pode esconder a tabuada...<br>" + valorTabuada
+    }
+
+    function esconderTabuada(){
+
+        tabuada.innerHTML = "Aguardando para exibir tabuada..."
+
+    }
+
+    //Funções normais
+    function funcaoNormal(){
+        document.write(`Função tipo Normal<br><br>`)
+    }
+
+    //Expressão de Função (Function Expressions)
+    const expressionFunctions = function() {
+        document.write("Função tipo Expression Functions<br><br>")
+    }
+
+    //Arrow Functions
+    const arrowFunctions = () => {
+        document.write("Função tipo Arrow Functions")
+    }
+
+
+
+</script>
+</html>

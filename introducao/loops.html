@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula 32 - Javascript</title>
+</head>
+<body>
+    <script>
+        let numero = prompt("Digite um número: ")
+        let i = 1
+        while(i <= 10){
+            document.write(`${numero} x ${i} = ${numero * i}<br>`)
+            if(i===5){
+                document.write(`<br>Loop interrompido pelo comando <b>break</b>`)
+                document.write(`<br>O comando <b>break</b> mata o loop, portanto a tabuada do ${numero} ficará pela metade`)
+                break 
+            }
+            i++
+        }
+        document.write(`<br>Tá aí a tabuada do ${numero} usando Loop While<hr>`)
+
+        for(let j = 1;j<=10;j++){
+            if(j%3===0){
+                document.write(`<br>Volta (Iteração) anulada (morta) pelo comando <b>continue</b>`)
+                document.write(`<br>O comando <b>continue</b> mata a volta (iteração) do loop`)
+                document.write(`<br>Nessa tabuada, os múltiplos de 3 não serão exibidos<br><br>`)
+                continue
+            }
+            document.write(`${numero} x ${j} = ${numero * j}<br>`)
+        }
+        document.write(`<br>Tá aí a tabuada do ${numero} usando Loop for`)
+    </script>
+</body>
+</html>
